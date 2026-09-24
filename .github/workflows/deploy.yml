@@ -30,8 +30,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Build Static Site
+      - name: Sync Data and Build Site
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
+          node sync-data.js
           node build.js
 
       - name: Upload artifact
@@ -49,3 +52,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

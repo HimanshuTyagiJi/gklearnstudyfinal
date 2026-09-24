@@ -1,4 +1,4 @@
-﻿name: Hidden Build and Deploy
+name: Hidden Build and Deploy
 
 on:
   repository_dispatch:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           # PLACEHOLDER: Update this to your exact Private Repo name
-          repository: HimanshuTyagiJi/gklearnstudy_private
+          repository: HimanshuTyagiJi/gklearnstudyprivate
           token: ${{ secrets.DEPLOY_TOKEN }}
 
       - name: Setup Node.js
